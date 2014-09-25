@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<root version="2.9">
+	<properties>
+		<name>Drop Lowest</name>
+		<version>1</version>
+		<author>DMFirmy</author>
+		<description>Drops the lowest roll from a set of dice. Useful for rolling ability scores.</description>
+		<ruleset>
+			<name>3.5E</name>
+		</ruleset>
+		<ruleset>
+			<name>PFRPG</name>
+		</ruleset>		
+		<ruleset>
+			<name>4E</name>
+		</ruleset>
+		<ruleset>
+			<name>5E</name>
+		</ruleset>		
+		<ruleset>
+			<name>Theon</name>
+		</ruleset>		
+	</properties>
+
+	<base>
+		<script name="DropLowest" file="scripts/drop_lowest.lua" /> 
+	</base>
+
+</root>
