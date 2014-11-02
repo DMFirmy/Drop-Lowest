@@ -4,8 +4,7 @@ function onInit()
     Comm.registerSlashHandler("rolld", processRoll);
 	ActionsManager.registerResultHandler("rolld", onRoll);
 
-
-	print("Drop Lowest Init");
+	ActionsManager.print("Drop Lowest Init");
 
 		
 	-- send launch message
@@ -17,14 +16,16 @@ end
 function processRoll(sCommand, sParams)
 	local rRoll = {};
 	rRoll.sType = "rolld";
-	rRoll.aDice = { "d6" };
+	rRoll.aDice = {  };
 	rRoll.nMod = 0;						
-	ActionsManager.performAction(nil, nil, rRoll);					
-	--Comm.throwDice(sDragType, aDice, iModifier, sDescription);
+	ActionsManager.performAction(nil, nil, rRoll);	
 end
 
 
 
 function onRoll(rSource, rTarget, rRoll)
-	print("Yo")
+	rRoll.aDice = { "d6", "d6", "d6", "d6" };
+	local rThrow = ActionsManager.buildThrow(rSource, vTargets, rRoll, false);
+	Comm.throwDice(rThrow);
+
 end
