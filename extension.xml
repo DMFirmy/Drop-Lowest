@@ -7,6 +7,9 @@
 		<author>DMFirmy</author>
 		<description>Drops the lowest roll from a set of dice. Useful for rolling ability scores.</description>
 		<ruleset>
+			<name>CoreRPG</name>
+		</ruleset>
+    <ruleset>
 			<name>3.5E</name>
 		</ruleset>
 		<ruleset>
