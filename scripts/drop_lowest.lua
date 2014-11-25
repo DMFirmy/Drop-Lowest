@@ -76,9 +76,9 @@ function createRoll(sParams)
 end
 
 ---
---- This function first sorts the dice rolls using the insertion sort algorithm,
---- then it splits the dice results into kept and dropped dice, and stores them
---- as rRoll.aDice and rRoll.aDropped.
+--- This function first sorts the dice rolls in ascending order, then it splits
+--- the dice results into kept and dropped dice, and stores them as rRoll.aDice
+--- and rRoll.aDropped.
 ---
 function dropDiceResults(rRoll)
 	if #(rRoll.aDice) < 2 then return rRoll end
@@ -86,18 +86,8 @@ function dropDiceResults(rRoll)
 	local drop = tonumber(rRoll.nDrop) or 0;
 	local dropped = {};
 	local kept = {};
-	local j;
-
-	for j = 2, len do
-		local die = rRoll.aDice[j];
-		local i = j - 1;
-		while i > 0 and rRoll.aDice[i].result > die.result do
-			rRoll.aDice[i + 1] = rRoll.aDice[i];
-			i = i - 1;
-		end
-		rRoll.aDice[i + 1] = die;
-	end
 	
+	table.sort(rRoll.aDice, function(a,b) return a.result < b.result end);
 	local count = 1;
 	while count <= len do
 		if count <= drop then
