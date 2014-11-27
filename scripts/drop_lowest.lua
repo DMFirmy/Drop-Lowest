@@ -2,13 +2,13 @@
 --- Initialization
 ---
 function onInit()
-    Comm.registerSlashHandler("rolld", processRoll);
+	Comm.registerSlashHandler("rolld", processRoll);
 	GameSystem.actions["rolld"] = { bUseModStack = false };
 	ActionsManager.registerResultHandler("rolld", onRoll);
 
 	-- send launch message
 	local msg = {sender = "", font = "emotefont"};
-	msg.text = "DMFirmy's Drop Lowest loaded. Type \"rolld ?\" for usage.";
+	msg.text = "DMFirmy's Drop Lowest loaded. Type \"/rolld ?\" for usage.";
 	ChatManager.registerLaunchMessage(msg);
 end
 
@@ -147,5 +147,6 @@ end
 function onRoll(rSource, rTarget, rRoll)
 	rRoll = dropDiceResults(rRoll);
 	rMessage = createChatMessage(rSource, rRoll);
+	rMessage.type = "dice";
 	Comm.deliverChatMessage(rMessage);
 end

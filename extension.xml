@@ -3,7 +3,7 @@
 <root version="2.9">
 	<properties>
 		<name>Drop Lowest</name>
-		<version>1</version>
+		<version>1.529</version>
 		<author>DMFirmy</author>
 		<description>Drops the lowest roll from a set of dice. Useful for rolling ability scores.</description>
 		<ruleset>
@@ -20,7 +20,13 @@
 		</ruleset>
 		<ruleset>
 			<name>5E</name>
-		</ruleset>		
+		</ruleset>
+		<ruleset>
+			<name>Numenera</name>
+		</ruleset>
+		<ruleset>
+			<name>Castles and Crusades</name>
+		</ruleset>
 		<ruleset>
 			<name>Theon</name>
 		</ruleset>		
